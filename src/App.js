@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './App.css'
+import './App.css'; // Import the custom CSS file
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -21,11 +21,15 @@ function App() {
   return (
     <div>
       <nav>
-        <div className="brand">A.CORP</div>
-        <button onClick={getUsers}>Get Users</button>
+        <div className="brand">Task-2 LGM Completed</div>
+        <button className="get-users-button" onClick={getUsers}>
+          Get Users
+        </button>
       </nav>
       {loading ? (
-        <div className="loader">Loading...</div>
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
       ) : (
         <div className="user-grid">
           {users.map(user => (
